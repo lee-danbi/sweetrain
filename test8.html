@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습태그</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        ol,
+        ul,
+        dl {
+            list-style: none;
+        }
+        
+        #tab {
+            width: 1000px;
+            text-align: center;
+            position: relative;
+        }
+        
+        #tab>li {
+            width: 50%;
+            background-color: #000;
+            color: #fff;
+            float: left;
+        }
+        
+        #tab:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        
+        #tab>li input {
+            display: none;
+        }
+        
+        #tab>li>label {
+            display: block;
+            line-height: 50px;
+        }
+        
+        #tab .ab_box {
+            position: absolute;
+            left: 0;
+            top: 100%;
+            width: 100%;
+            height: 500px;
+            background-color: #999;
+            color: #000;
+            z-index: 1;
+        }
+        
+        #tab>li>input:checked~.ab_box {
+            z-index: 99;
+        }
+        
+        #tab>li>input:checked~label {
+            background-color: yellow;
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="tab">
+        <li>
+            <input type="radio" id="notice1" name="tab">
+            <label for="notice1">공지사항</label>
+            <div class="ab_box">공지사항 내용어쩌고저쩌고</div>
+        </li>
+        <li>
+            <input type="radio" id="notice2" name="tab">
+            <label for="notice2">게시판</label>
+            <div class="ab_box">게시판 내용어쩌고저쩌고</div>
+        </li>
+    </ul>
+</body>
+
+</html>
