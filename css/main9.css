@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+ol,
+dl {
+    list-style: none;
+}
+
+html {
+    font-size: 12px;
+}
+
+#tab {
+    width: 50rem;
+    text-align: center;
+    position: relative;
+}
+
+#tab>li {
+    width: 25rem;
+    background-color: #000;
+    color: #fff;
+    float: left;
+}
+
+#tab:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#tab>li>input {
+    display: none;
+}
+
+#tab>li>label {
+    display: block;
+    line-height: 5rem;
+}
+
+#tab>li .ab_box {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    background-color: #999;
+    height: 25rem;
+    z-index: 1;
+}
+
+#tab>li>input:checked~label {
+    background-color: yellow;
+    color: #000;
+}
+
+#tab>li>input:checked~.ab_box {
+    z-index: 99;
+}
