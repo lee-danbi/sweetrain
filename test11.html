@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    #ta_1,
+    td,
+    th {
+        border: solid 1px #000;
+        border-collapse: collapse;
+    }
+    
+    #ta_1 {
+        width: 500px;
+        line-height: 50px;
+        margin: 0 auto;
+    }
+    
+    caption {
+        font-weight: bold;
+    }
+    
+    tfoot {
+        height: 300px;
+    }
+</style>
+
+<body>
+</body>
+<table id="ta_1">
+    <caption>표만들기</caption>
+    <thead>
+        <tr>
+            <th colspan="3">표 머리</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td align="center">1번</td>
+            <td>첫번째 내용</td>
+            <td>첫번째 추가내용</td>
+        </tr>
+        <tr>
+            <td align="center">2번</td>
+            <td>두번째 내용</td>
+            <td rowspan="2"><em>두번째 추가내용(세로병합 했음)</em></td>
+        </tr>
+        <tr>
+            <td align="center">3번</td>
+            <td>세번째 내용</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <td align="center" colspan="3" valign="middle"><b>가로병합 했음</b></td>
+    </tfoot>
+</table>
+
+</html>

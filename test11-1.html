@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        ul,
+        ol,
+        dl {
+            list-style: none;
+        }
+        
+        #wrap {
+            width: 300px;
+            margin: 500px;
+            text-align: center;
+            position: relative;
+        }
+        
+        #wrap input {
+            display: none;
+        }
+        
+        #wrap label {
+            display: block;
+            line-height: 50px;
+            background-color: #000;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        #wrap .depth01 {
+            position: absolute;
+            left: 0;
+            bottom: 100%;
+            width: 100%;
+            overflow: hidden;
+            height: 0;
+            transition: 0.6s;
+        }
+        
+        #wrap .depth01>li {}
+        
+        #wrap .depth01>li>a {
+            display: block;
+            background-color: #ccc;
+            color: #000;
+            line-height: 50px;
+        }
+        
+        #wrap input:checked~.depth01 {
+            height: 200px;
+        }
+        
+        #wrap .depth01>li:hover>a {
+            background-color: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <input type="checkbox" id="fa_1" neme="family">
+        <label for="fa_1">패밀리사이트</label>
+        <ul class="depth01">
+            <li><a href="#">패밀리사이트1 GO</a></li>
+            <li><a href="#">패밀리사이트2 GO</a></li>
+            <li><a href="#">패밀리사이트3 GO</a></li>
+            <li><a href="#">패밀리사이트4 GO</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>
