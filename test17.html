@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src='./test17.js'></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box1 {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+        }
+        
+        .box2 {
+            position: absolute;
+            width: 500px;
+            height: 300px;
+            left: calc(50% - 150px);
+            top: calc(50% - 250px);
+            background-color: #ccc;
+        }
+        
+        .close {
+            position: absolute;
+            width: 50px;
+            height: 30px;
+            left: 70%;
+            top: 20%;
+            background-color: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="but">버튼</button>
+    <div class="box1">
+        <div class="box2">팝업내용</div>
+        <button class="close">닫기</button>
+    </div>
+
+</body>
+
+</html>
