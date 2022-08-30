@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 문자열이 용량이 더 커서 전체 문자열로 인식함. 
+        let count = 10;
+        let age = prompt('나이를 입력해주세요', '입력하세요');
+
+        //그래서 숫자함수로 적용시키려면 넘버함수를 넣어준다. 그럼 그 줄이 넘버함수로 변경
+        count = count + Number(age);
+        document.write('당신의 나이에 10을 더하면 ' + count + ' 살 입니다.');
+    </script>
+</body>
+
+</html>
