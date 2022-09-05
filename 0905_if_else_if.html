@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //겹치지 않는 세가지 이상의 조건을 나타낼 때 사용함.
+
+        //기본형
+        // if (조건1) {
+        //    조건1이 참일 때 실행문;
+        // } else if (조건2) {
+        //    조건2가 참일 때 실행문;
+        // } else {
+        //    모든 조건에 해당사항이 없을 경우 실행문;}
+
+        let month = prompt('달을 입력해주세요', 1);
+
+        if (month >= 3 && month <= 5) {
+            document.write('봄봄봄 봄이와써요~');
+        } else if (month >= 6 && month <= 8) {
+            document.write('서피비치에 갈 여름이 왔어요~');
+        } else if (month >= 9 && month <= 11) {
+            document.write('단풍구경 갑세~');
+        } else if (month > 12 || month == 0) {
+            alert('다시 입력해주세요. 12개월을 벗어났습니다!');
+        } else {
+            document.write('스노보도 타러 갈 겨울이 왔어용~');
+        }
+    </script>
+</body>
+
+</html>

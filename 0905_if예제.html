@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let userName = prompt('이름을 입력하세요');
+        if (userName != '') {
+            document.write(userName + '님 반갑습니다.');
+        }
+
+        // if (userName) {document.write(userName + '님 반갑습니다.');} -> 이것도 똑같이 잘 나옴
+
+        // 왜냐하면 if문은 참이냐, 거짓이냐를 판별 문장임.
+        // if (userName) -> 변수자체가 들어감 -> 숫자 0은 아니게 됨.
+        // 단, 무엇이든 입력했다는 조건하에.
+        // 0이 아닌 모든 수는 true(참).
+        // 참값이 들어가기만 하면 조건색은 참이 되어 if문을 실행.
+        // 거짓으로 판별되는 애들 -> false, 0, null, nudefined
+        // NaN(자료형은 숫자, 숫자 아닌 경우 연산식 오류 터질때 가장 많이 등장.)
+
+        // !='' 이거랑 !=null도 같은 의미
+    </script>
+</body>
+
+</html>
