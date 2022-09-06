@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        ol,
+        ul,
+        dl {
+            list-style: none;
+        }
+        
+        dl {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        dl dt {
+            background-color: #ddd;
+            line-height: 50px;
+            font-size: 20px;
+            color: #000;
+            text-indent: 40px;
+            border-bottom: solid 1px #000;
+        }
+        
+        dl dt::after {
+            content: "";
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-top: solid 8px #333;
+            border-bottom: solid 8px #333;
+            border-right: solid 8px transparent;
+            border-left: solid 8px transparent;
+            transition: 1s;
+            margin-left: 10px;
+            /*모래시계 모양으로 나옴*/
+        }
+        
+        dl dt:hover::after {
+            transform: rotate(720deg);
+            /*회전효과*/
+        }
+        
+        dl dd {
+            background-color: #fff;
+            color: #333;
+            line-height: 100px;
+            border-bottom: solid 1px #333;
+            font-size: 20px;
+            display: none;
+        }
+        
+        dl dd span {
+            color: red;
+            font-weight: bold;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <dl id="wrap">
+        <dt>공지사항</dt>
+        <dd>제발<span>좀</span>읽어라</dd>
+
+        <dt>읽어줘</dt>
+        <dd>그냥<span>일단</span>읽어라</dd>
+
+        <dt>여기봐</dt>
+        <dd>이걸<span>제발</span>읽어라</dd>
+
+        <dt>보라고</dt>
+        <dd>여기요<span>쫌</span>읽어라</dd>
+    </dl>
+
+    <script>
+        $(function() {
+
+            $('#wrap dt').on('click', function() {
+                $('+dd', this).slideDown(500).siblings("dd").slideUp(500);
+                //방금 클릭한 놈의 바로 아래 형제야 명령을 들어
+                //siblings('dd') -> 형제들 중에 dd야 명령을 들어
+                //메서드 체인
+            });
+
+            $('#wrap dd').on('click', function() {
+                $(this).slideUp(500);
+            });
+        });
+
+        // slideToggle은 수동으로 접었다 폈다 할 수 있음
+    </script>
+</body>
+
+</html>
