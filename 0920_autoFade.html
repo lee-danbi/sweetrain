@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        ul,
+        dl,
+        ol {
+            list-style: none;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        #wrap {
+            width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            height: 500px;
+        }
+        
+        #main {
+            position: relative;
+        }
+        
+        #main ul li {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            line-height: 500px;
+            text-align: center;
+            display: none;
+        }
+        
+        #main ul li a {
+            display: block;
+            color: #fff;
+            font-size: 20px;
+        }
+        
+        #main ul li:nth-child(1) {
+            background-color: red;
+        }
+        
+        #main ul li:nth-child(2) {
+            background-color: #444;
+        }
+        
+        #main ul li:nth-child(3) {
+            background-color: darkgreen;
+        }
+        
+        #wrap button {
+            position: absolute;
+            width: 50px;
+            line-height: 50px;
+            background-color: #fff;
+            color: #000;
+            border: 0;
+            bottom: 14px;
+        }
+        
+        #wrap #play {
+            left: calc(50% - 60px);
+        }
+        
+        #wrap #stop {
+            left: 50%;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="main">
+            <ul>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+            </ul>
+        </div>
+        <button id="play">play</button>
+        <button id="stop">stop</button>
+    </div>
+
+    <script>
+        $(function() {
+            let num = 0;
+            let bool = true;
+            $('#main ul li').eq(num).fadeIn(300);
+
+            function fade_inOut() {
+                num++;
+                num %= 3;
+                $('#main ul li').eq(num).fadeIn(300).siblings().fadeOut(300);
+            }
+            let autoFade = setInterval(fade_inOut, 1000);
+
+            $('#stop').on('click', function() {
+                if (bool === true) {
+                    clearInterval(autoFade)
+                    bool = false;
+                }
+            });
+            $('#play').on('click', function() {
+                if (bool === false) {
+                    autoFade = setInterval(fade_inOut, 1000);
+                    bool = true;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
