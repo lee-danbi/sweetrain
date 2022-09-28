@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul, ol, dl {
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        ul {
+            width: 1280px;
+            display: flex;
+            margin: 0 auto;
+        }
+        ul li {
+            width: 25%;
+        }
+        ul li a{
+            display: block;
+        }
+        ul li a img{
+            width: 100%;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>전체이미지<span></span>개 입니다.</h1>
+    <ul>
+        <li><a href="#"><img src="./img/img100.jpg" alt="" data-img="./img/img500.jpg"
+                    data-origin="./img/img100.jpg"></a></li>
+        <li><a href="#"><img src="./img/img200.jpg" alt="" data-img="./img/img600.jpg"
+                    data-origin="./img/img200.jpg"></a></li>
+        <li><a href="#"><img src="./img/img300.jpg" alt="" data-img="./img/img700.jpg"
+                    data-origin="./img/img300.jpg"></a></li>
+        <li><a href="#"><img src="./img/img400.jpg" alt="" data-img="./img/img800.jpg"
+                    data-origin="./img/img400.jpg"></a></li>
+    </ul>
+    <!--data-000 이건 내가 맘대로 정할 수 있음-->
+
+    <script>
+        $(function(){
+            $('li a img').on('mouseenter',function(){
+                $(this).attr('src',$(this).data('img')); //data 메서드에서만 허용.
+            }).on('mouseleave',function(){ // 주어가 같을 경우에는 주어 생략하고 메서드 체인으로 가능
+                $(this).attr('src',$(this).data('origin'));
+            });
+
+            // $('li:not(:first-chlid) a img') -> 첫번째만 빼고 적용시킬때!
+
+            $('h1 > span').html($('ul li').length); // length 갯수
+        });
+
+        // 메서드 안에 값 뿐만 아니라 문장도 들어갈 수 있다는거 ★
+    </script>
+</body>
+</html>

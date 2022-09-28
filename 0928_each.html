@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul, ol ,dl {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        #gr {
+            width: 400px;
+            display: block;
+            margin: 0 auto;
+        }
+        ul {
+            width: 400px;
+            display: flex;
+            margin: 0 auto;
+        }
+        ul li {
+            width: 25%;
+        }
+        ul li a{
+            display: block;
+        }
+        ul li a img {
+            display: block;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>전체이미지<span></span>개 입니다.</h1>
+    <img id ="gr" src="./img/img800.jpg" data-origin="./img/img800.jpg">
+    <ul>
+        <li><a href="#"><img src="./img/img100.jpg"></a></li>
+        <li><a href="#"><img src="./img/img200.jpg"></a></li>
+        <li><a href="#"><img src="./img/img300.jpg"></a></li>
+        <li><a href="#"><img src="./img/img400.jpg"></a></li>
+    </ul>
+
+    <script>
+        $(function(){
+            $('h1 > span').html($('ul li').length);
+            // 셀럭터에 지우고 넣겠다 li의 갯수만큼
+
+            $('ul li').each(function(){ //each -> 각각 다 풀어헤쳐라
+                $('a img',this).css('display','block'); // 첫번째 li의 a에 img 숨겨라
+                $('a',this).append($(this).index()+1); // 두번째 li의 a에 순번을 추가해라 (컴퓨터 순서는 0이 첫번째니 +1로 1로 시작하게)
+            });
+                // ★ index : 너 몇번째야? -> this(지금)랑만 사용할 수 있음!! eq와 다른점임!!!
+                // eq : 밖에서 안에 들어와서 순서를 찾을때
+                // index : 내 순서를 밖으로 반환할때
+
+            $('ul li').on('mouseenter',function(){
+                $('#gr').attr('src',$('a img',this).attr('src'));
+            }).on('mouseleave',function(){
+                $('#gr').attr('src',$(this).data('origin'));
+            });
+        });
+    </script>
+</body>
+</html>

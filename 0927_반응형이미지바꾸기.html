@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+        }
+        ul, ol, dl {
+            list-style: none;
+        }
+        #benner img {
+            width: 1280px;
+        }
+    </style>
+
+</head>
+<body>
+<div id="benner">
+    <img src="./img/img01.jpg" alt="">
+</div>
+
+    <script>
+
+        // 반응형때 이미지 바꿔치기 효과
+        // 브라우저 width값이 768px이하일때
+
+        $(function(){
+            $(window).resize(function(){
+
+                if($(window).width() > 768){
+                    $('#benner img').attr('src','./img/img01.jpg');
+                }else{
+                    $('#benner img').attr('src','./img/img02.jpg');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
