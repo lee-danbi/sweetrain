@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="bodyId" class="bodyClass">
+    <script>
+        // 바디태그를 잡아서 글자를 넣고 싶다면?
+        document.querySelector('.bodyClass').innerHTML = '집어넣어보기 제이커리 셀렉터와 비슷'; //지우고 대입하다
+        //예외, 바디태그는 하나 밖에 없기 때문에.
+        document.body.innerHTML += '<h1>바디객체로 바로 접근 가능! ※바디만 가능</h1>'; // += -> 추가해서 대입하다
+        // 태그 이름으로 접근하기
+        document.getElementsByTagName('body').item(0).innerHTML += '태그의 이름으로 접근, 복수'; //복수 단위라서 무조건 ★아이템 메서드(순번)★와 꼭 같이 써야함!
+        // 아이디로 접근하기
+        document.getElementById('bodyId').innerHTML += '<h2>아이디로 접근가능, 단수</h2>';
+        // 클래스로 접근하기
+        document.getElementsByClassName('bodyClass').item(0).innerHTML += '<p>클래스로 접근, 복수</p>';
+
+
+        //응용문제 : 아이디로 접근한 놈을 빨간색으로 바꾸기!
+        document.querySelector('#bodyId h2').style.color = '#ff0000';
+
+        //응용문제2 : h2태그를 클릭했을때 알림창 띄우기
+        document.querySelector('#bodyId h2').addEventListener('click',function(){
+            alert('클릭하셨습니다.');
+        });
+
+    </script>
+
+</body>
+
+</html>
