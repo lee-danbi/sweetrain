@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li.on a{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <ul id="gnb">
+
+    </ul>
+    <script>
+
+        // 다음에게만 class로 'on'이 들어가서 글자가 빨간색으로 바뀌어야함.
+
+        const nav = [['네이버','#naver'], // ['네이버','#naver'.''],['다음','#daum','on'],['구글','#google',''] 더 간단하게는 클래스 자리를 하나 더 만들어준다
+                    ['다음','#daum'],
+                    ['구글','#google']];
+
+        let navTag = ''; 
+        let className = ''; // 그리고 이거랑 if문을 지우고
+
+        for(let i = 0; i < nav.length; i++){
+            if (i === 1){
+                className = 'on';
+            }else{
+                className = '';
+            }
+
+            // navTag += `<li class=${nav[i][2]}><a href="${nav[i][1]}">${nav[i][0]}</a></li>`; 
+            navTag += `<li class=${className}><a href="${nav[i][1]}">${nav[i][0]}</a></li>`;
+            }
+
+        document.getElementById('gnb').innerHTML = navTag; 
+
+    </script>
+</html>

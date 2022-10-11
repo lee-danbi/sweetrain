@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2단 배열(어레이)</title>
+</head>
+<body>
+    <ul id="gnb">
+
+    </ul>
+    <script>
+        const nav = [['네이버','#naver'],
+                    ['다음','#daum'],
+                    ['구글','#google']];
+
+        let navTag = ''; //빈 태그를 만들어서
+
+        for(let i = 0; i < nav.length; i++){
+            navTag += `<li><a href="${nav[i][1]}">${nav[i][0]}</a></li>`; // 빈 태그 안에 변수를 담아두었다가 
+            
+        }
+
+        document.getElementById('gnb').innerHTML = navTag; // 한번에 뿌린다
+    </script>
+</body>
+</html>
